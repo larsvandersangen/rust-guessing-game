@@ -29,8 +29,7 @@ jobs:
 
     - name: Build --release
       run: cargo build --release
-      
-    - name: Publish artifact
+
     - uses: actions/upload-artifact@v2
       with:
         name: artifact-${{ matrix.os }}
