@@ -30,10 +30,7 @@ jobs:
     - name: Build --release
       run: cargo build --release
 
-    - name: Prepare artifact
-      run:  tar -cvf artifact-${{ matrix.os }}.tar target/release/rust-guessing-game*
-      
     - uses: actions/upload-artifact@v2
       with:
         name: artifact-${{ matrix.os }}
-        path: artifact-${{ matrix.os }}.tar
+        path: target/release/rust-guessing-game*
