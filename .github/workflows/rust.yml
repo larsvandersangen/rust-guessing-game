@@ -33,4 +33,6 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: artifact-${{ matrix.os }}
-        path: target/release/rust-guessing-+(game|.exe)
+        path: |
+          target/release/rust-guessing-game
+          target/release/rust-guessing-game.exe
