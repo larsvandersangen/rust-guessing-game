@@ -3,7 +3,7 @@ use std::cmp::Ordering;
 use rand::Rng;
 
 fn main() {
-    let secret_number = rand::thread_rng().gen_range(1, 101);
+    let secret_number: u32 = rand::thread_rng().gen_range(1, 101);
 
     println!("I've picked a number! You try and guess it 😉");
 
@@ -16,7 +16,7 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line!");
 
-        let guess: i32 = match guess.trim().parse() {
+        let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue
         };
